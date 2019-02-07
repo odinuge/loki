@@ -1,4 +1,4 @@
-FROM       alpine:3.4
+FROM       alpine:3.9
 RUN        apk add --update --no-cache ca-certificates && rm /var/cache/apk/*
 ADD        promtail /usr/bin
 COPY       promtail-local-config.yaml /etc/promtail/local-config.yaml
