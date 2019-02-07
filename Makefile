@@ -4,7 +4,8 @@
 # Boiler plate for bulding Docker containers.
 # All this must go at top of file I'm afraid.
 IMAGE_PREFIX ?= grafana/
-IMAGE_TAG := $(shell ./tools/image-tag)
+IMAGE_TAG_EXTRA ?=
+IMAGE_TAG := $(shell ./tools/image-tag)${IMAGE_TAG_EXTRA}
 UPTODATE := .uptodate
 GIT_REVISION := $(shell git rev-parse --short HEAD)
 GIT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
